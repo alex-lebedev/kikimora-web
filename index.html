@@ -198,7 +198,20 @@
 
     .check{ list-style:none; margin:0; padding:0; display:grid; gap:8px; }
     .check li{ position:relative; padding-left:22px; }
-    .check li::before{ content:""; position:absolute; left:0; top:.5em; width:10px; height:10px; border-radius:3px; background:radial-gradient(circle at 30% 30%, var(--accent) 0 40%, transparent 42%), radial-gradient(circle at 70% 70%, var(--accent-2) 0 40%, transparent 42%); border:1px solid color-mix(in oklab, var(--accent-2), transparent 30%); }
+    .check li::before{
+    content:"";
+    position:absolute; left:0; top:.45em;
+    width:12px; height:12px;
+    background:linear-gradient(180deg, var(--accent), color-mix(in oklab, var(--accent), #000 12%));
+    border:0;
+    -webkit-mask: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">\
+    <path d="M6 0l6 3v6l-6 3L0 9V3z"/></svg>') center/contain no-repeat;
+            mask: url('data:image/svg+xml;utf8,\
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">\
+    <path d="M6 0l6 3v6l-6 3L0 9V3z"/></svg>') center/contain no-repeat;
+    }
+
 
     .kicker{ font:700 12px 'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-bottom:6px; }
     .note{ color:var(--muted); font-size:14px; }
@@ -255,6 +268,8 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">{ IT Infrastructure • Cybersecurity • Digital Marketing }</span>
+          <h1></h1>
+
           <h1>Building Secure Digital Foundations for Global Business.</h1>
           <p class="slogan">Kikimora AG is a Swiss company providing IT infrastructure, cybersecurity, and digital marketing services for B2B clients worldwide.</p>
           <div class="hero-cta">
